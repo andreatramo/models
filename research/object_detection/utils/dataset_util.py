@@ -30,8 +30,22 @@ def bytes_feature(value):
   return tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))
 
 
+def bytes_feature_str(value):
+  value_byte = []
+  for val in value:
+    value_byte.append(str.encode(val))
+  return tf.train.Feature(bytes_list=tf.train.BytesList(value=value_byte))
+
+
 def bytes_list_feature(value):
   return tf.train.Feature(bytes_list=tf.train.BytesList(value=value))
+
+
+def bytes_list_feature_str(value):
+  value_byte = []
+  for val in value:
+    value_byte.append(str.encode(val))
+  return tf.train.Feature(bytes_list=tf.train.BytesList(value=value_byte))
 
 
 def float_list_feature(value):
