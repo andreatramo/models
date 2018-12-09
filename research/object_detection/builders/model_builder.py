@@ -48,6 +48,8 @@ from object_detection.models.ssd_mobilenet_v1_ppn_feature_extractor import SSDMo
 from object_detection.models.ssd_mobilenet_v2_feature_extractor import SSDMobileNetV2FeatureExtractor
 from object_detection.models.ssd_mobilenet_v2_fpn_feature_extractor import SSDMobileNetV2FpnFeatureExtractor
 from object_detection.models.ssd_mobilenet_v2_keras_feature_extractor import SSDMobileNetV2KerasFeatureExtractor
+from object_detection.models.ssd_effnet_keras_feature_extractor import SSDEffNetKerasFeatureExtractor
+from object_detection.models.ssd_tintDSOD_keras_feature_extractor import SSDTinyDSODKerasFeatureExtractor
 from object_detection.models.ssd_pnasnet_feature_extractor import SSDPNASNetFeatureExtractor
 from object_detection.predictors import rfcn_box_predictor
 from object_detection.protos import model_pb2
@@ -75,7 +77,9 @@ SSD_FEATURE_EXTRACTOR_CLASS_MAP = {
 }
 
 SSD_KERAS_FEATURE_EXTRACTOR_CLASS_MAP = {
-    'ssd_mobilenet_v2_keras': SSDMobileNetV2KerasFeatureExtractor
+    'ssd_mobilenet_v2_keras': SSDMobileNetV2KerasFeatureExtractor,
+    'ssd_effnet_keras': SSDEffNetKerasFeatureExtractor,
+    'ssd_tinyDSOD_keras': SSDTinyDSODKerasFeatureExtractor,
 }
 
 # A map of names to Faster R-CNN feature extractors.
