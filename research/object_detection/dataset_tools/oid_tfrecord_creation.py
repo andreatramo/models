@@ -61,16 +61,16 @@ def tf_example_from_annotations_data_frame(annotations_data_frame, label_map,
           dataset_util.float_list_feature(
               filtered_data_frame_boxes.XMax.as_matrix()),
       standard_fields.TfExampleFields.object_class_text:
-          dataset_util.bytes_list_feature_str(
+          dataset_util.bytes_list_feature(
               filtered_data_frame_boxes.LabelName.as_matrix()),
       standard_fields.TfExampleFields.object_class_label:
           dataset_util.int64_list_feature(
               filtered_data_frame_boxes.LabelName.map(lambda x: label_map[x])
               .as_matrix()),
       standard_fields.TfExampleFields.filename:
-          dataset_util.bytes_feature_str('{}.jpg'.format(image_id)),
+          dataset_util.bytes_feature('{}.jpg'.format(image_id)),
       standard_fields.TfExampleFields.source_id:
-          dataset_util.bytes_feature_str(image_id),
+          dataset_util.bytes_feature(image_id),
       standard_fields.TfExampleFields.image_encoded:
           dataset_util.bytes_feature(encoded_image),
   }
